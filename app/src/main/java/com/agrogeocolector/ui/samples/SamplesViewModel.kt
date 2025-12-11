@@ -100,9 +100,7 @@ class SamplesViewModel @Inject constructor(
                 // IMPORTANTE: Agenda sincronização automática
                 // Esta chamada garante que a amostra será enviada ao Supabase
                 // assim que houver conexão com internet
-                com.agrogeocolector.data.sync.SyncManager.syncAfterSave(
-                    application
-                )
+                // com.agrogeocolector.data.sync.SyncManager.syncAfterSave(application)
                 
             } catch (e: Exception) {
                 _uiState.value = UiState.Error("Erro ao salvar: ${e.message}")
@@ -115,9 +113,7 @@ class SamplesViewModel @Inject constructor(
      * Chamado quando usuário clica em "Sincronizar Agora".
      */
     fun forceSyncNow() {
-        com.agrogeocolector.data.sync.SyncManager.syncNow(
-            application
-        )
+        // com.agrogeocolector.data.sync.SyncManager.syncNow(application)
     }
     
     /**
