@@ -1,0 +1,61 @@
+# ============================================
+# GITIGNORE - AgroColetor
+# ============================================
+
+# ===== Android Studio =====
+*.iml
+.gradle
+/.idea/
+.DS_Store
+.externalNativeBuild
+.cxx
+
+# ===== Gradle =====
+.gradle/
+build/
+/captures
+local.properties
+
+# ===== Android Build Outputs =====
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# ===== Credenciais (IMPORTANTE!) =====
+local.properties
+google-services.json
+keystore.properties
+
+# ===== Keystore =====
+*.jks
+*.keystore
+*.p12
+
+# ===== Logs =====
+*.log
+
+# ===== NDK =====
+obj/
+
+# ===== Profiling =====
+*.hprof
+
+# ===== Temp Files =====
+*.swp
+*~
+.~*
+
+# ===== OS Specific =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE Specific =====
+.vscode/
+.fleet/
+
+# ===== Backup Files =====
+*.bak
+*.tmp
+*.orig

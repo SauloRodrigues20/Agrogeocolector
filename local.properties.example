@@ -1,0 +1,33 @@
+# ============================================
+# CONFIGURAÇÃO DO SUPABASE
+# ============================================
+# Este arquivo mostra como configurar suas credenciais.
+# 
+# INSTRUÇÕES:
+# 1. Copie este arquivo e renomeie para: local.properties
+# 2. Preencha as credenciais do seu projeto Supabase
+# 3. NUNCA faça commit do arquivo local.properties
+#
+# Para obter suas credenciais:
+# - Acesse: https://supabase.com/dashboard
+# - Vá em: Settings → API
+# - Copie: Project URL e anon/public key
+# ============================================
+
+# URL do seu projeto Supabase
+# Exemplo: https://zwxobbirovyeudkzmxze.supabase.co
+SUPABASE_URL=https://seu-projeto-aqui.supabase.co
+
+# Chave pública (anon key) do Supabase
+# ATENÇÃO: Use a chave "anon public", NÃO a "service_role"!
+# Exemplo: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+SUPABASE_ANON_KEY=sua-chave-anon-aqui
+
+# ============================================
+# NOTAS DE SEGURANÇA
+# ============================================
+# ✅ A chave anon é SEGURA para uso no app
+# ✅ A segurança vem do Row Level Security (RLS)
+# ❌ NUNCA exponha a chave service_role
+# ❌ NUNCA faça commit de credenciais reais
+# ============================================

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AgroColetor</string>
+    <string name="app_description">Coleta de amostras de solo offline</string>
+    
+    <!-- Map Screen -->
+    <string name="map_title">Mapa de Coleta</string>
+    <string name="add_sample">Adicionar Amostra</string>
+    <string name="my_location">Minha Localização</string>
+    
+    <!-- Permissions -->
+    <string name="permission_location_rationale">Necessário para marcar coordenadas das amostras</string>
+    <string name="permission_camera_rationale">Necessário para fotografar as amostras</string>
+    
+    <!-- Sync -->
+    <string name="sync_now">Sincronizar Agora</string>
+    <string name="sync_in_progress">Sincronizando…</string>
+    <string name="sync_success">Sincronização concluída</string>
+    <string name="sync_error">Erro na sincronização</string>
+    
+    <!-- Sample -->
+    <string name="sample_note_hint">Observações da coleta…</string>
+    <string name="sample_save">Salvar</string>
+    <string name="sample_cancel">Cancelar</string>
+</resources>

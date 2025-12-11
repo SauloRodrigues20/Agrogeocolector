@@ -1,0 +1,99 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+      
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+        
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+      
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-release
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Download Debug APK
+      uses: actions/download-artifact@v4
+      with:
+        name: app-debug
+        
+    - name: Download Release APK
+      uses: actions/download-artifact@v4
+      with:
+        name: app-release
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          app-debug.apk
+          app-release-unsigned.apk
+        body: |
+          # 🌱 AgroColetor ${{ github.ref_name }}
+          
+          ## 📥 Download
+          
+          **Para usuários normais:**
+          - Baixe: `app-debug.apk`
+          - Instale no celular
+          - Veja o guia: [INSTALACAO_APK.md](INSTALACAO_APK.md)
+          
+          **Para desenvolvedores:**
+          - `app-debug.apk` - Debug build (maior, com logs)
+          - `app-release-unsigned.apk` - Release build (otimizado, precisa assinar)
+          
+          ## ⚙️ Configuração
+          
+          Após instalar, você precisa:
+          1. Criar conta no Supabase (grátis)
+          2. Configurar credenciais no app
+          3. Veja o guia completo: [COMO_USAR.md](COMO_USAR.md)
+          
+          ## ✨ Novidades desta versão
+          
+          - Veja o changelog completo no repositório
+          
+          **🇧🇷 Desenvolvido para a Agronomia Brasileira**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
