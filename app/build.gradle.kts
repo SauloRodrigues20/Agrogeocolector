@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -23,10 +26,10 @@ android {
         }
         
         // Lê credenciais do local.properties (se existir)
-        val localProperties = java.util.Properties()
+        val localProperties = Properties()
         val localPropertiesFile = rootProject.file("local.properties")
         if (localPropertiesFile.exists()) {
-            localProperties.load(java.io.FileInputStream(localPropertiesFile))
+            localProperties.load(FileInputStream(localPropertiesFile))
         }
         
         // Credenciais do Supabase como BuildConfig
