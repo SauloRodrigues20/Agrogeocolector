@@ -38,7 +38,7 @@ git status
 git add .
 
 # Commitar
-git commit -m "feat: Projeto completo - AgroColetor v1.0.0
+git commit -m "feat: projeto completo - AgroColetor v1.0.0
 
 - ✅ MapLibre + OpenStreetMap
 - ✅ Room Database offline
