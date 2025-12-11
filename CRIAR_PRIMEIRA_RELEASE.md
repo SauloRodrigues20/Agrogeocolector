@@ -15,7 +15,7 @@ Vamos criar agora!
 git add .
 
 # Commitar
-git commit -m "feat: Projeto AgroColetor v1.0.0 completo
+git commit -m "feat: projeto AgroColetor v1.0.0 completo
 
 - Mapa offline com MapLibre + OSM
 - Banco de dados Room
@@ -84,7 +84,7 @@ https://github.com/SauloRodrigues20/Agrogeocolector/releases/tag/v1.0.0
 ```bash
 # Tudo em sequência
 git add .
-git commit -m "feat: Projeto completo v1.0.0"
+git commit -m "feat: projeto completo v1.0.0"
 git push origin main
 git tag -a v1.0.0 -m "Release v1.0.0"
 git push origin v1.0.0
