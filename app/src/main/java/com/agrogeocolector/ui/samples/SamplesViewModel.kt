@@ -101,7 +101,7 @@ class SamplesViewModel @Inject constructor(
                 // Esta chamada garante que a amostra será enviada ao Supabase
                 // assim que houver conexão com internet
                 com.agrogeocolector.data.sync.SyncManager.syncAfterSave(
-                    getApplication<android.app.Application>()
+                    application
                 )
                 
             } catch (e: Exception) {
@@ -116,7 +116,7 @@ class SamplesViewModel @Inject constructor(
      */
     fun forceSyncNow() {
         com.agrogeocolector.data.sync.SyncManager.syncNow(
-            getApplication<android.app.Application>()
+            application
         )
     }
     
